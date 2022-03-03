@@ -65,7 +65,7 @@ public class ProdutoRepository {
         Optional<Produto> produtoEncontrado =  obterPorIdProdutos(produto.getId());
 
         if(produtoEncontrado.isEmpty()){
-            throw new ResourceNotFoundException("Produto não encontrado");
+            throw new ResourceNotFoundException("Produto não pode ser atualizado, pois não existe");
         }
         //Remover produto antigo da lista
         deletarProduto(produto.getId());
