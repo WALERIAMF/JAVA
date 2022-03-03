@@ -12,9 +12,13 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ProdutoRepository {
     
+
+    //#region simulando banco de dados
     private List<Produto> produtos = new ArrayList<Produto>();
     private Integer ultimoId = 0;
+    //#endregion
 
+    
     /**
      * Metodo para retornar lista de produtos
      * @return Lista de produtos
