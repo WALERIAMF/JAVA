@@ -1,9 +1,9 @@
-package com.teste.primeiroprojeto.testespringboot.controller;
+package com.teste.primeiroprojeto.testespringboot.api.controller;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.teste.primeiroprojeto.testespringboot.model.Produto;
+import com.teste.primeiroprojeto.testespringboot.domain.model.Produto;
 import com.teste.primeiroprojeto.testespringboot.service.ProdutoService;
 
 import org.springframework.beans.factory.annotation.Autowired;

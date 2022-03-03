@@ -1,4 +1,4 @@
-package com.teste.primeiroprojeto.testespringboot.exception;
+package com.teste.primeiroprojeto.testespringboot.domain.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

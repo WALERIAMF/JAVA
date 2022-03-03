@@ -1,4 +1,4 @@
-package com.teste.primeiroprojeto.testespringboot.model;
+package com.teste.primeiroprojeto.testespringboot.domain.model;
 
 public class Produto {
     

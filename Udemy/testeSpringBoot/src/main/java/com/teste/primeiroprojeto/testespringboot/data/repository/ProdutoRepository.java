@@ -1,11 +1,11 @@
-package com.teste.primeiroprojeto.testespringboot.repository;
+package com.teste.primeiroprojeto.testespringboot.data.repository;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
-import com.teste.primeiroprojeto.testespringboot.model.Produto;
+import com.teste.primeiroprojeto.testespringboot.domain.model.Produto;
 
 import org.springframework.stereotype.Repository;
 

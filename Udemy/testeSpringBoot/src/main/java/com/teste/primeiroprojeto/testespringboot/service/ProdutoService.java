@@ -3,8 +3,8 @@ package com.teste.primeiroprojeto.testespringboot.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.teste.primeiroprojeto.testespringboot.model.Produto;
-import com.teste.primeiroprojeto.testespringboot.repository.ProdutoRepository;
+import com.teste.primeiroprojeto.testespringboot.data.repository.ProdutoRepository;
+import com.teste.primeiroprojeto.testespringboot.domain.model.Produto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
