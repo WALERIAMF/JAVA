@@ -5,6 +5,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
+import com.teste.primeiroprojeto.testespringboot.domain.exception.ResourceNotFoundException;
 import com.teste.primeiroprojeto.testespringboot.domain.model.Produto;
 
 import org.springframework.stereotype.Repository;
@@ -64,7 +65,7 @@ public class ProdutoRepository {
         Optional<Produto> produtoEncontrado =  obterPorIdProdutos(produto.getId());
 
         if(produtoEncontrado.isEmpty()){
-            throw new InputMismatchException("Produto não encontrado");
+            throw new ResourceNotFoundException("Produto não encontrado");
         }
         //Remover produto antigo da lista
         deletarProduto(produto.getId());
