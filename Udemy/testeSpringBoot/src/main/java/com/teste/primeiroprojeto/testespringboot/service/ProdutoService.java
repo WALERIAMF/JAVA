@@ -2,8 +2,10 @@ package com.teste.primeiroprojeto.testespringboot.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import com.teste.primeiroprojeto.testespringboot.data.repository.ProdutoRepository;
+import com.teste.primeiroprojeto.testespringboot.domain.dto.ProdutoDto;
 import com.teste.primeiroprojeto.testespringboot.domain.model.Produto;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +23,13 @@ public class ProdutoService {
      * Metodo para retornar lista de produtos
      * @return Lista de produtos
      */
-    public List<Produto> obterTodoProdutos()
+    public List<ProdutoDto> obterTodoProdutos()
     {
-        return produtoRepository.obterTodosProdutos();    
+        List<Produto> produtos = produtoRepository.findAll(); 
+        return produtos.stream()
+        .map(produto -> new ModelMapper()
+        .map(produto, ProdutoDto.class))
+        .collect(Collectors.toList());   
     }
 
       /**
@@ -33,7 +39,7 @@ public class ProdutoService {
      */
     public Optional<Produto> obterPorIdProdutos(Integer id)
     {
-        return produtoRepository.obterPorIdProdutos(id);
+        return produtoRepository.findById(id);
     }
 
      /**
@@ -41,7 +47,7 @@ public class ProdutoService {
      * @param produto que será adicionado
      * @return Retorna o produto a ser adicionado na lista
      */
-    public Produto adicionaProduto(Produto produto){
+    public ProdutoDto adicionaProduto(ProdutoDto produto){
 
         return produtoRepository.adicionaProduto(produto);
     }
@@ -64,7 +70,7 @@ public class ProdutoService {
      */
     public void deletarProduto(Integer id){
 
-        produtoRepository.deletarProduto(id);
+        produtoRepository.deleteById(id);
 
     }
 }
